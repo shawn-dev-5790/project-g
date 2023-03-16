@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-G</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        svg {
+            outline: 1px solid gold;
+        }
+
+        path {
+            transition: all .4s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <button id="btn">random</button>
+        <svg width="300" height="300">
+            <path class='_target' d="M 0 300 L 100 300 L 200 300 L 300 300" stroke="red" stroke-width="2"
+                fill="transparent"></path>
+            <!-- <path d="M 0 0 h 100 v 100 h -100 Z" stroke="black" fill="black"></path>
+            <path d="M 100 100 h 100 v 100 h -100 Z" stroke="black" fill="black"></path>
+            <path d="M 0 200 h 100 v 100 h -100 Z" stroke="black" fill="black"></path> -->
+        </svg>
+    </div>
+    <!-- <script src="../src/handlers.js"></script> -->
+    <!-- <script type="module" src="../main.js"></script> -->
+    <script>
+        document.getElementById('btn').addEventListener('click', (e) => {
+            e.target.disabled = true
+            setInterval(() => {
+                document.querySelector('._target').attributes.d.value = `M 0 300 L 100 ${(Math.random() * 300).toFixed(0)} L 200 ${(Math.random() * 300).toFixed(0)} L 300 ${(Math.random() * 300).toFixed(0)}`
+            }, 700)
+        })
+
+
+    </script>
+</body>
+
+</html>
