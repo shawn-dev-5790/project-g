@@ -19,7 +19,6 @@
             align-items: center;
             width: 100vw;
             height: 100vh;
-
         }
 
         svg {
@@ -33,28 +32,8 @@
 </head>
 
 <body>
-    <div id="root">
-        <button id="btn">random</button>
-        <svg width="300" height="300">
-            <path class='_target' d="M 0 300 L 100 300 L 200 300 L 300 300" stroke="red" stroke-width="2"
-                fill="transparent"></path>
-            <!-- <path d="M 0 0 h 100 v 100 h -100 Z" stroke="black" fill="black"></path>
-            <path d="M 100 100 h 100 v 100 h -100 Z" stroke="black" fill="black"></path>
-            <path d="M 0 200 h 100 v 100 h -100 Z" stroke="black" fill="black"></path> -->
-        </svg>
-    </div>
-    <!-- <script src="../src/handlers.js"></script> -->
-    <!-- <script type="module" src="../main.js"></script> -->
-    <script>
-        document.getElementById('btn').addEventListener('click', (e) => {
-            e.target.disabled = true
-            setInterval(() => {
-                document.querySelector('._target').attributes.d.value = `M 0 300 L 100 ${(Math.random() * 300).toFixed(0)} L 200 ${(Math.random() * 300).toFixed(0)} L 300 ${(Math.random() * 300).toFixed(0)}`
-            }, 700)
-        })
-
-
-    </script>
+    <div id="root"></div>
+    <script src='./bundle.js'></script>
 </body>
 
 </html>
